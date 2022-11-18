@@ -7,7 +7,7 @@ import GetPopularMovies from "./services/GetPopularMovies";
 const App = () => {
   const [data, setData] = useState([]);
   const [search, setSearch] = useState("");
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   const updateData = async () => {
     setLoading(true);
@@ -19,7 +19,6 @@ const App = () => {
   };
 
   useEffect(() => {
-    setLoading(true);
     const getData = async () => {
       const response = await GetPopularMovies();
       setData(response.data.results);
