@@ -41,7 +41,7 @@ const App = () => {
                   type={`text`}
                   placeholder={`Search Movie ...`}
                   onChange={(e) => setSearch(e.target.value)}
-                  className={`w-full outline-none text-sm py-2.5 px-3 rounded border border-gray-500 focus:ring-4 focus:ring-blue-500 duration-300`}
+                  className={`w-full outline-none bg-gray-100 text-sm py-2.5 px-3 rounded border border-gray-500 focus:ring-4 focus:ring-blue-500 duration-300`}
                 />
                 <button
                   className={`py-2.5 px-3 rounded bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:ring-blue-500 duration-300`}
@@ -58,6 +58,14 @@ const App = () => {
                   <Card key={movie.id} data={movie} />
                 ))}
               </div>
+              {!data ||
+                (data?.length == 0 && (
+                  <span
+                    className={`block text-base text-center text-gray-50 font-bold`}
+                  >
+                    Movie Not Found
+                  </span>
+                ))}
             </div>
           </div>
         </div>
