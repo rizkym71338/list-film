@@ -24,7 +24,9 @@ const App = () => {
       setData(response.data.results);
     };
     getData();
-    setLoading(false);
+    setTimeout(() => {
+      setLoading(false);
+    }, 1000);
   }, []);
 
   return (
